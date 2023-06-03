@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body
+    class="flex min-h-screen w-[250px] flex-col items-center overscroll-auto min-[251px]:w-full xxs:justify-center xxs:bg-gray-100">
+    <div class="flex w-full">
+      <!-- grid -->
+      <div
+        class="mx-auto grid w-full grid-cols-12 bg-gray-100 xxs:w-[490px] xxs:items-center xxs:justify-center xxs:rounded-lg xxs:bg-white xxs:p-5 sm:w-[610px] sm:gap-5 md:w-[720px]">
+        <!-- Left box -->
+        <div
+          class="left col-span-full h-full bg-[url(./images/bg-sidebar-mobile.svg)] bg-cover bg-no-repeat py-10 xxs:col-span-4 xxs:my-5 xxs:rounded-lg xxs:bg-white xxs:bg-[url(./images/bg-sidebar-desktop.svg)] xxs:bg-left-bottom xxs:py-5">
+          <ul
+            class="flex list-none justify-center space-x-5 pb-10 max-[250px]:space-x-2 max-[160px]:space-x-1 xxs:flex-col xxs:space-y-5">
+            <li class="hidden xxs:flex"></li>
+            <li class="flex space-x-2 text-center xxs:text-start sm:space-x-3">
+              <div>
+                <p
+                  class="step-1 left-side-steps flex h-8 w-8 items-center justify-center rounded-full border bg-gray-200 font-medium">
+                  1
+                </p>
+              </div>
+              <div class="hidden flex-col text-xs xxs:flex">
+                <span class="text-blue-400">STEP 1</span>
+                <p class="text-xs font-semibold text-white">YOUR INFO</p>
+              </div>
+            </li>
+            <li class="flex space-x-2 text-center xxs:text-start sm:space-x-3">
+              <div>
+                <p
+                  class="step-2 left-side-steps flex h-8 w-8 items-center justify-center rounded-full border font-medium text-white">
+                  2
+                </p>
+              </div>
+              <div class="hidden flex-col text-xs xxs:flex">
+                <span class="text-blue-400">STEP 2</span>
+                <p class="text-xs font-semibold text-white">SELECT PLAN</p>
+              </div>
+            </li>
+            <li class="flex space-x-2 text-center xxs:text-start sm:space-x-3">
+              <div>
+                <p
+                  class="step-3 left-side-steps flex h-8 w-8 items-center justify-center rounded-full border font-medium text-white">
+                  3
+                </p>
+              </div>
+              <div class="hidden flex-col text-xs xxs:flex">
+                <span class="text-blue-400">STEP 3</span>
+                <p class="text-xs font-medium text-white sm:font-semibold">
+                  ADD-ONS
+                </p>
+              </div>
+            </li>
+            <li class="flex space-x-2 text-center xxs:text-start sm:space-x-3">
+              <div>
+                <p
+                  class="step-4 left-side-steps flex h-8 w-8 items-center justify-center rounded-full border font-medium text-white">
+                  4
+                </p>
+              </div>
+              <div class="hidden flex-col text-xs xxs:flex">
+                <span class="text-blue-400">STEP 4</span>
+                <p class="text-xs font-medium text-white sm:font-semibold">
+                  SUMMARY
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Right box : Contain All 4 Steps -->
+        <div class="right col-span-full px-5 pt-5 xxs:col-span-8 xxs:bg-white">
+          <!-- Step-1 : Start -->
+          <div
+            id="step_1"
+            class="form-box steps -translate-y-16 rounded-lg bg-white p-5 xxs:-translate-y-0">
+            <div class="info space-y-1">
+              <h3 class="text-xl font-bold">Personal info</h3>
+              <p class="text-sm text-gray-500">
+                Please provide your name, email address, and phone number.
+              </p>
+            </div>
+            <form
+              onsubmit="return false"
+              name="myForm"
+              class="mt-5 space-y-3 xxs:space-y-5">
+              <div class="name relative flex flex-col">
+                <label for="name" class="mb-1 text-sm font-medium text-gray-600"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  class="rounded-md border-2 border-gray-200 px-3 py-1 focus:border-gray-300 focus:outline-none"
+                  placeholder="e.g. Stephen King" />
+                <span
+                  id="nameMsgErr"
+                  class="absolute right-0 top-0 hidden translate-y-1 text-xs font-semibold text-red-700"
+                  >This field is required</span
+                >
+              </div>
+              <div class="email relative flex flex-col">
+                <label
+                  for="email"
+                  class="mb-1 text-sm font-medium text-gray-600"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  class="rounded-md border-2 border-gray-200 px-3 py-1 focus:border-gray-300 focus:outline-none"
+                  placeholder="e.g. stephenking@lorem.com" />
+                <span
+                  id="emailMsgErr"
+                  class="absolute right-0 top-0 hidden translate-y-1 text-xs font-semibold text-red-700"
+                  >This field is required</span
+                >
+              </div>
+              <div class="phone-number relative flex flex-col">
+                <label for="ph" class="mb-1 text-sm font-medium text-gray-600"
+                  >Phone Number</label
+                >
+                <input
+                  type="number"
+                  name="phone"
+                  class="rounded-md border-2 border-gray-200 px-3 py-1 focus:border-gray-300 focus:outline-none"
+                  placeholder="e.g. +1 234 567 890" />
+                <span
+                  id="phoneMsgErr"
+                  class="absolute right-0 top-0 hidden translate-y-1 text-xs font-semibold text-red-700"
+                  >This field is required</span
+                >
+              </div>
+              <div
+                class="btn hidden w-full bg-white text-right xxs:block xxs:bg-white xxs:pt-3">
+                <button
+                  type="submit"
+                  onclick="return stepHandler(1)"
+                  class="rounded-md bg-[hsl(213,_96%,_18%)] px-4 py-2 text-xs font-medium text-white hover:cursor-pointer hover:opacity-80">
+                  Next Step
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- Step 1 : End -->
+
+          <!-- Step-2 : Start -->
+          <div
+            id="step_2"
+            class="form-box steps hidden -translate-y-12 rounded-lg bg-white p-5 xxs:-translate-y-0 xxs:pt-0 sm:px-4">
+            <div class="info sm:ps-2">
+              <h3 class="text-xl font-bold">Select your plan</h3>
+              <p class="text-sm text-gray-500">
+                You have the option of monthly or yearly billing.
+              </p>
+            </div>
+            <form
+              onsubmit="return false"
+              name="myForm"
+              class="justify-between space-y-3 sm:flex sm:flex-wrap">
+              <div class="hidden sm:block"></div>
+              <div
+                class="arcade relative flex flex-col hover:cursor-pointer xxs:basis-[30%]">
+                <div
+                  id="plan_1"
+                  onclick="SelectPlanHandler(1)"
+                  class="selectPlan flex basis-1/3 rounded-lg border-2 border-blue-600 bg-blue-50 p-3 text-base sm:flex-col sm:space-y-5">
+                  <div class="icon">
+                    <img
+                      class="hidden xxxs:block sm:w-[50%]"
+                      src="./images/icon-arcade.svg"
+                      alt="arcade" />
+                  </div>
+                  <div class="content ms-2 font-medium sm:ms-0">
+                    <h4>Arcade</h4>
+                    <p class="plans text-xs text-gray-500">$9/mo</p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="advanced relative flex flex-col hover:cursor-pointer xxs:basis-[30%]">
+                <div
+                  id="plan_2"
+                  onclick="SelectPlanHandler(2)"
+                  class="selectPlan flex basis-1/3 rounded-lg border-2 border-[hsl(228,_100%,_84%)] p-3 text-base sm:flex-col sm:space-y-5">
+                  <div class="icon">
+                    <img
+                      class="hidden xxxs:block sm:w-[50%]"
+                      src="./images/icon-advanced.svg"
+                      alt="arcade" />
+                  </div>
+                  <div class="content ms-2 font-medium sm:ms-0">
+                    <h4>Advanced</h4>
+                    <p class="plans text-xs text-gray-500">$12/mo</p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="pro relative flex flex-col hover:cursor-pointer xxs:basis-[30%]">
+                <div
+                  id="plan_3"
+                  onclick="SelectPlanHandler(3)"
+                  class="selectPlan flex basis-1/3 rounded-lg border-2 border-[hsl(228,_100%,_84%)] p-3 text-base sm:flex-col sm:space-y-5">
+                  <div class="icon">
+                    <img
+                      class="hidden xxxs:block sm:w-[50%]"
+                      src="/images/icon-pro.svg"
+                      alt="arcade" />
+                  </div>
+                  <div class="content ms-2 font-medium sm:ms-0">
+                    <h4>Pro</h4>
+                    <p class="plans text-xs text-gray-500">$15/mo</p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex basis-full justify-center rounded-md bg-gray-100 py-2">
+                <label class="month text-sm font-medium xxxs:hidden">M</label>
+                <label class="month hidden text-sm font-medium xxxs:block"
+                  >Month</label
+                >
+                <div
+                  id="plan"
+                  class="mx-2 box-border flex h-6 w-12 rounded-full bg-[hsl(213,_96%,_18%)] p-1">
+                  <button
+                    id="planbtn"
+                    onclick="monthYearPlanHandler()"
+                    class="h-4 w-4 rounded-full bg-white duration-200"></button>
+                </div>
+                <label
+                  class="year text-sm font-medium text-gray-400 xxxs:hidden"
+                  >Y</label
+                >
+                <label
+                  class="year hidden text-sm font-medium text-gray-400 xxxs:block"
+                  >Year</label
+                >
+              </div>
+
+              <div class="btn hidden basis-full justify-between pt-10 xxs:flex">
+                <div class="go-back">
+                  <button
+                    onclick="goBackToPreviousPage()"
+                    class="text-xs font-medium text-gray-500 opacity-60">
+                    Go Back
+                  </button>
+                </div>
+                <button
+                  type="submit"
+                  onclick="return stepHandler(2)"
+                  class="rounded-md bg-[hsl(213,_96%,_18%)] px-4 py-2 text-xs font-medium text-white hover:cursor-pointer hover:opacity-80">
+                  Next Step
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- Step-2 : End -->
+
+          <!-- Step-3 : Start -->
+          <div
+            id="step_3"
+            class="form-box steps hidden -translate-y-16 rounded-lg bg-white p-5 xxs:-translate-y-0 xxs:p-0">
+            <div class="info sm:ps-2">
+              <h3 class="text-xl font-bold">Pick add-ons</h3>
+              <p class="text-sm text-gray-500">
+                Add-ons help enhance your gaming experience.
+              </p>
+            </div>
+            <form onsubmit="return false" name="myForm" class="space-y-3">
+              <div class="hidden sm:block"></div>
+
+              <div class="relative flex flex-col xxs:basis-[30%]">
+                <div
+                  id="checkbox_1"
+                  class="checkbox flex items-center justify-between rounded-lg border-2 p-3 text-base sm:space-y-5">
+                  <div class="checkbox-2 flex items-center justify-center">
+                    <input
+                      type="checkbox"
+                      onclick="checkBoxHandler(1)"
+                      style="accent-color: rgba(50, 50, 239, 0.837)"
+                      class="h-6 w-6 rounded-lg border-gray-300" />
+                    <div class="content ms-3 font-medium xxs:ms-4">
+                      <h4>Online service</h4>
+                      <p class="text-xs text-gray-500 opacity-75">
+                        Aceess to multiplayer games
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="price plans text-xs font-semibold text-blue-600 opacity-80 max-[270px]:hidden xxs:text-sm">
+                    +$1/mo
+                  </p>
+                </div>
+              </div>
+              <div class="relative flex flex-col xxs:basis-[30%]">
+                <div
+                  id="checkbox_2"
+                  class="checkbox flex items-center justify-between rounded-lg border-2 p-3 text-base sm:space-y-5">
+                  <div class="checkbox-2 flex items-center justify-center">
+                    <input
+                      type="checkbox"
+                      onclick="checkBoxHandler(2)"
+                      style="accent-color: rgba(50, 50, 239, 0.837)"
+                      class="h-6 w-6 rounded-lg border-gray-300" />
+                    <div class="content ms-3 font-medium xxs:ms-4">
+                      <h4>Larger storage</h4>
+                      <p class="text-xs text-gray-500 opacity-75">
+                        Extra 1TB of cloud save
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="price plans text-xs font-semibold text-blue-600 opacity-80 max-[270px]:hidden xxs:text-sm">
+                    +$2/mo
+                  </p>
+                </div>
+              </div>
+              <div class="relative flex flex-col xxs:basis-[30%]">
+                <div
+                  id="checkbox_3"
+                  class="checkbox flex items-center justify-between rounded-lg border-2 p-3 text-base sm:space-y-5">
+                  <div class="checkbox-3 flex items-center justify-center">
+                    <input
+                      type="checkbox"
+                      onclick="checkBoxHandler(3)"
+                      style="accent-color: rgba(50, 50, 239, 0.837)"
+                      class="blue h-6 w-6 rounded-lg border-gray-300" />
+                    <div class="content ms-3 font-medium xxs:ms-4">
+                      <h4>Customizable profile</h4>
+                      <p class="text-xs text-gray-500 opacity-75">
+                        Custom theme on your profile
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="price plans text-xs font-semibold text-blue-600 opacity-80 max-[270px]:hidden xxs:text-sm">
+                    +$2/mo
+                  </p>
+                </div>
+              </div>
+
+              <div class="btn hidden basis-full justify-between pt-10 xxs:flex">
+                <div class="go-back">
+                  <button
+                    onclick="goBackToPreviousPage()"
+                    class="text-xs font-medium text-gray-500 opacity-60">
+                    Go Back
+                  </button>
+                </div>
+                <button
+                  type="submit"
+                  onclick="return stepHandler(3)"
+                  class="rounded-md bg-[hsl(213,_96%,_18%)] px-4 py-2 text-xs font-medium text-white hover:cursor-pointer hover:opacity-80">
+                  Next Step
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- Step-3 : End -->
+
+          <!-- Step-4 : Start -->
+          <div
+            id="step_4"
+            class="form-box steps hidden -translate-y-16 rounded-lg bg-white p-5 xxs:-translate-y-0 xxs:p-0">
+            <div class="info sm:ps-2">
+              <h3 class="text-xl font-bold">Finishing up</h3>
+              <p class="text-sm text-gray-500">
+                Double-check everything looks OK before confirming.
+              </p>
+            </div>
+            <form onsubmit="return false" name="myForm" class="space-y-3">
+              <div class="hidden sm:block"></div>
+
+              <div class="flex flex-col rounded-md bg-gray-100 xxs:basis-[30%]">
+                <div
+                  class="flex items-center justify-between rounded-lg p-3 text-base sm:space-y-5">
+                  <div class="flex items-center justify-center">
+                    <div class="content ms-3 xxs:ms-4">
+                      <h4 class="st-4-item font-medium">Arcade (Monthly)</h4>
+                      <p class="text-sm opacity-80">
+                        <button
+                          onclick="changePlan()"
+                          class="border-none text-blue-600 underline outline-none">
+                          change
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="price st-4 text-xs font-bold max-[270px]:hidden xxs:text-sm">
+                    +$9/mo
+                  </p>
+                </div>
+                <hr class="mx-5" />
+                <div
+                  class="services flex flex-col gap-2 p-5 text-xs text-gray-500 sm:text-sm">
+                  <div class="st-4-item flex items-center justify-between">
+                    <p>Online service</p>
+                    <p class="st-4 font-semibold">+$10/yr</p>
+                  </div>
+                  <div class="st-4-item flex items-center justify-between">
+                    <p>Larger storage</p>
+                    <p class="st-4 font-semibold">+$20/yr</p>
+                  </div>
+                  <div class="st-4-item flex items-center justify-between">
+                    <p>Customizable profile</p>
+                    <p class="st-4 font-semibold">+$20/yr</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="totalPriceYear flex justify-between px-5">
+                <p class="st-4 text-xs text-gray-500 sm:text-sm">
+                  Total(per year)
+                </p>
+                <p class="st-4 text-sm font-bold text-blue-700">$120/yr</p>
+              </div>
+
+              <div class="btn hidden basis-full justify-between pt-10 xxs:flex">
+                <div class="go-back">
+                  <button
+                    onclick="goBackToPreviousPage()"
+                    class="text-xs font-medium text-gray-500 opacity-60">
+                    Go Back
+                  </button>
+                </div>
+                <button
+                  type="submit"
+                  onclick="return stepHandler(4)"
+                  class="rounded-md bg-blue-700 px-4 py-2 text-xs font-medium text-white hover:cursor-pointer hover:opacity-80">
+                  Confirm
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- Step-4 : End -->
+
+          <!-- Step-5 : Start -->
+          <div
+            id="step_5"
+            class="thank-you steps hidden -translate-y-16 rounded-lg bg-white p-5 xxs:-translate-y-0 xxs:p-0">
+            <div class="flex flex-col items-center justify-center bg-white p-3">
+              <img
+                class="mb-3 w-[50px] xxs:w-[60px]"
+                src="./images/icon-thank-you.svg"
+                alt="" />
+              <h3 class="mb-1 text-lg font-bold">Thank You!</h3>
+              <p class="text-center text-sm font-[400] text-gray-400">
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
+            </div>
+          </div>
+          <!-- Step-5 : End -->
+        </div>
+
+        <!-- Mobile View - Button  -->
+        <div id="mobile-view-btn" class="col-span-full bg-white p-5 xxs:hidden">
+          <button
+            onclick="goBackToPreviousPage()"
+            id="go-back-btn"
+            class="go-back hidden text-xs font-medium text-gray-500 opacity-60">
+            Go Back
+          </button>
+          <button
+            onclick="return stepHandler(getCurrentStep())"
+            class="float-right rounded-md bg-[hsl(213,_96%,_18%)] px-4 py-2 text-xs font-medium text-white hover:cursor-pointer hover:opacity-80">
+            Next Step
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full py-3 text-center text-sm">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        class="text-[hsl(228,_45%,_44%)]"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Deepanshu Heer</a>.
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>
