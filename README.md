@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution](https://github.com/deep0133/frontend-mentor-multi-step-form-solution)
+- Live Site URL: [Live site URL](https://deep0133.github.io/frontend-mentor-multi-step-form-solution/)
 
 ### Built with
 
